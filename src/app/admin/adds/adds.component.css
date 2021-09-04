@@ -1,0 +1,61 @@
+.card i
+{
+   color: #f5365c;
+
+}
+
+    #view {
+        position: absolute;
+        top: 10px;
+        bottom: 0px !important;
+        left: 315px;
+    }
+    #update {
+      position: absolute;
+      top: 10px;
+      bottom: 0px !important;
+      left: 345px;
+  }
+    #bread{
+     padding-left: 25px;
+     width: 39%;
+    }
+    @media screen and (max-width: 768px)  {
+      #bread{
+          
+          width: 101%;
+      }
+      #myModall
+      {
+          left: 0px !important;
+          top: 10px;
+          bottom: 0;
+          overflow-x: auto;
+          }
+          #myModal
+          {
+              left: 0px !important;
+              top: 10px;
+              bottom: 0;
+              overflow-x: auto;
+          }
+         
+          #update {
+              position: absolute;
+              top: 10px;
+              bottom: 0px !important;
+              right: 0px;
+          }
+          #view {
+              position: absolute;
+              top: 10px;
+              bottom: 0px !important;
+              right: 0px;
+          }
+          .breadcrumb-item a{
+            font-size: 12px;
+          }
+          .breadcrumb .active {
+            font-size: 12px;
+          }
+  }

@@ -1,0 +1,87 @@
+
+<div class="login-block" *ngIf="!this.login">
+    <br>
+    
+    <h1>Login</h1>
+    <br>
+    <br>
+    <form [formGroup]="loginForm" class="box" (ngSubmit)="onSubmit()">
+    <input type="text" value="" placeholder="Username"  formControlName="user_id" id="username" [ngClass]="{ 'is-invalid': submitted && f.user_id.errors }" />
+    <div *ngIf="submitted && f.user_id.errors" class="invalid-feedback">
+        <div *ngIf="f.user_id.errors.required">Field  required</div>
+    </div>
+<br>
+    <input type="password" value="" placeholder="Password"  formControlName="password" id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Field  required</div>
+    </div>
+    <br>
+    <br>
+    <button>Submit</button>
+    </form>
+    <p style="font-size:12px">Not  logged in?    <a (click)="gotoLogin()">Sign Up </a> here</p>
+    <br>
+    <br>
+   
+</div>
+<div class="login-block" *ngIf="this.login">
+    <br>
+    
+    <h1>Sign Up</h1>
+    <br>
+    <br>
+    <form [formGroup]="loginForm" class="box" (ngSubmit)="onSubmitsignup()">
+        <div class="row" >
+            <div  class="col">
+                <input type="text" class="form-control"  formControlName="fname"  placeholder="First Name"  [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" >
+                <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                    <div *ngIf="f.fname.errors.required">Field  required</div>
+                </div>
+            </div>
+            <div  class="col">
+                <input type="text" class="form-control" formControlName="lname"  placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }">
+                <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                    <div *ngIf="f.lname.errors.required">Field  required</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" >
+            <div  class="col">
+                <input type="text" class="form-control" formControlName="phn_no" placeholder="Phone Number"  [ngClass]="{ 'is-invalid': submitted && f.phn_no.errors }">
+                <div *ngIf="submitted && f.phn_no.errors" class="invalid-feedback">
+                    <div *ngIf="f.phn_no.errors.required">Field  required</div>
+                </div>
+            </div>
+            <div  class="col">
+                <input type="text" class="form-control" formControlName="email"  placeholder="Email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Field  required</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" >
+            <div  class="col">
+                <input type="password" class="form-control"  formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Field  required</div>
+                </div>
+            </div>
+            <div  class="col">
+                <input type="password" class="form-control"  formControlName="conf" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submitted && f.conf.errors }">
+                <div *ngIf="submitted && f.conf.errors" class="invalid-feedback">
+                    <div *ngIf="f.conf.errors.required">Field  required</div>
+                </div>
+            </div>
+
+        </div>
+    <br>
+    <br>
+    <button>Submit</button>
+    </form>
+    <p style="font-size:12px">Alredy logged in?    <a (click)="gotoLogin()">Sign in </a> here</p>
+    <br>
+    <br>
+    
+</div>

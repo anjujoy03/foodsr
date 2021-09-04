@@ -1,0 +1,557 @@
+<div  [ngClass]="{'wrapper': show}">
+      
+  <div class="main_container">
+      <div class="sidebar" [ngClass]="{'sidebarsmall': show}" >
+          <div class="sidebar__inner">
+            <div class="profile">
+              <!-- <div class="img">
+                <img src="../../assets/IMG/exeq engineers.png" alt="profile_pic" style="width: 180px;height: 170px;"> 
+              </div> -->
+              <!-- <div class="profile_info">
+                 <p></p>
+                 <p class="profile_name">Alex John</p>
+              </div> -->
+            </div>
+            <ul>
+              
+              <!-- <li>
+                <a href="home" class="active">
+                  <span class="icon">
+                    <i class="fas fa-home"  style="color: plum;" ></i>
+                  </span>
+                  <span class="title">Dashboard</span>
+                </a>
+              </li> -->
+              <div class="top_navbarr" id="fixed-nav-bar"  >
+              <div class="hamburger" >
+                <div class="hamburger__inner" (click)="toggle()">
+                  <div class="one"></div>
+                  <div class="two"></div>
+                  <div class="three"></div>
+                </div>
+             </div>
+             <div class="foods" style="padding: 18px;">
+               <span style="color: #f5365c;
+               font-size: 20px;
+               font-weight: bold;
+               font-family: fangsong;">Foodsair</span>
+             </div>
+             </div>
+
+
+             <app-accordian style="margin-top: 21px;" [ngClass]="{'app-accordian': show}"
+             [options]="options" 
+             [menus]="menus">
+            
+           </app-accordian>
+                
+
+          <ul style="margin-top: 27px;" class="accordion" *ngIf="show">
+            <li *ngFor="let menu of menus; let i = index" 
+              [class.active]="menu.active">
+              <div class="menu">
+               
+              <img [src]="menu.iconClass" style="width: 16px;margin-right: 10px">
+              </div>
+            </li>
+         
+            
+      </ul>
+      </ul>
+            </div>
+        </div>
+    <body >
+      
+        
+       
+      <div class="container" style=" margin-top: 0px;max-width: 100% !important;" [ngClass]="{'bigcontainer': show}">
+        <div class="top_navbar" id="fixed-nav-bar" style="padding-top: 30px;display: inline-block;display: flex;">
+       
+       
+          <div style="width: 70%;">
+          <span id="title" ></span>
+          </div>
+          <div class="profile px-8"  >
+            <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
+                  <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;margin-left: 15px;font-size: 25px;" (click)="accountdropdown()">account_circle 
+                    <div></div></mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;"></span>
+                    <mat-list role="list" *ngIf="logactive">
+                    <div _ngcontent-aps-c3="" class=" dropdown-header noti-title">
+                      <h6 _ngcontent-aps-c3="" class="text-overflow m-0" id="wel">Welcome!</h6>
+                    </div>
+                    <hr> 
+                 
+                      <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:black;font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                    </mat-list>
+          </div>
+    
+              </div>
+       
+            
+  
+    <div class="row" style="padding-bottom: 10px; background-color: #f5365c;padding-top: 80px;">
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb" id="bread" >
+          <ol class="breadcrumb"  >
+            <li class="breadcrumb-item" >
+              <a href="home" style="color: black !important;">Home &nbsp; <i class="fas fa-home"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Food Details &nbsp;<i class="fas fa-info-circle"></i></li>
+          </ol>
+        </nav>
+      </div>
+      
+      <div class="col-md-3" >
+        <!-- <button type="button" class="btn btn-success"style=" box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-color:white;background-color:white !important;background-color:white !important;color:#f5365c; float: right;margin-right: 10px !important; " >Filter</button> -->
+        <button mat-button color="primary" class="btn btn-success" style=" box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-color:white;background-color:white !important;background-color:white !important;color:#f5365c; float: right;margin-right: 30px !important; width: 40%" data-toggle="modal" data-target="#myModal">Add</button>
+        <button mat-button color="primary" (click)="toggleShow()" class="btn btn-success"   style=" box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-color:white;background-color:white !important;background-color:white !important;color:#f5365c; float: right;margin-right: 10px !important;width: 40% ">Filter</button>
+       
+      
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+     
+  </div>
+  
+        <div class="row" style="margin-top: -70px !important;" >
+          <!-- <div class="card filter-card" *ngIf="filtertoggle">
+            <div class="card-header filter-header modal-title">Filter</div>
+            <div class="card-body justify-content-left">
+              <mat-form-field appearance="fill" style="    position: absolute;
+              top: 46px;
+              left: 20px;">
+                <mat-label>Choose an option</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button mat-button color="primary" style="margin-right: 135px !important">Filter</button>
+            </div>
+          </div> -->
+            <div class="col-lg-12" style="padding-left: 23px;">
+              <div class="card" id="carddd" *ngIf="isShown" style="margin-left: 0px;
+              width: 99%;
+              border-radius: 8px;">
+                <div  class="cardfil" id="caardfil" style="border-radius: 8px;" >
+                  <br>
+                  <h4 style="text-align: left;padding-left: 30px;font-size: 20px;padding-top: 10px;color: gray;"><b>Filter</b></h4>
+                  <br>
+                  <div class="row">
+                  
+                    <div class="col-md-4">
+                    
+                      <div class="row" style="padding-left: 46px;">
+                        <label for="exampleFormControlInput1" style="color: gray;">Keyword</label>
+
+                      </div>
+                      <div style="display: flex;margin-top: -26px;">
+                        <input type="search"   id="filtersearch" class="form-control" placeholder="Search by Food Name" />
+                        <!-- <button type="submit" id="filtersearchicon"><i class="fa fa-search"></i></button> -->
+                      </div>
+                    </div>
+                    <div class="col-md-6"  style="margin-left: -71px;">
+                      <div class="row" style="padding-left: 46px;">
+                        <label for="exampleFormControlInput1" style="color: gray;"> Sort</label>
+
+                      </div>
+                      <div style="display: flex;margin-top: -26px;">
+                        <select name="cars" id="filtersort"style="color: gray;" >
+                          <option value="no">Below 100 Rs</option>
+                          <option value=""> </option>
+                          <option value=""></option>
+                          <option value=""></option>
+                        </select>
+                        <button class="fltbtn" type="submit" >Filter</button>
+                      </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                  </div>
+               
+                  </div>
+                  </div>
+                <br>
+                <div class="car" style="width: 99%;margin-left: 0px;" id="cardd">
+                  <br>
+                  <br>
+                  <div style="display: inline;">
+                      <h5 style="float: left;margin-left: 25px;font-size: 25px;" class="text-heading"> Food List</h5>
+                     
+        
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+
+
+
+
+                  <table class="table" style="border-collapse:collapse;padding-top: 20px !important;width: 94%;margin-left: 25px;">
+                    <thead style="background: #f1f1f1;font-family: serif;color:white">
+                                <tr>
+                                    <th scope="col">SL NO</th>
+                                    <th scope="col" >CATEGORY NAME</th>
+                                    <th scope="col" >FOOD SIZE</th>
+                                    <th scope="col" >PRICE</th>
+                                    <th scope="col" >ACTION</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let food of this.foodList">
+
+                              
+                                <td scope="row">{{ food['food_size_id']}}</td>
+                                <td>{{food['food_name']}}</td>
+                                <td>{{food['food_sizescol']}}</td>
+                                <td>{{food['food_price']}}</td>
+                                
+                               <td>
+                                  <ul class="list-inline m-0">
+                                 
+                                <li class="list-inline-item"  style="padding-right: 20px;padding-bottom: 10px;">
+                                    <button class="btn-sm rounded-0 action-button" type="button" data-toggle="tooltip" data-placement="top" title="Update" (click)="ViewDetails(food['food_id'])" data-toggle="modal" data-target="#myModall" ><mat-icon class="action-icon">create</mat-icon></button>
+                                </li>
+                                <li class="list-inline-item"   style="padding-right: 20px;padding-bottom: 10px;">
+                                    <button class="btn-sm rounded-0 action-button" type="button" data-toggle="tooltip" data-placement="top" title="Delete" data-toggle="modal" (click)="Delete(food['food_id'])"data-target="#myMod"><mat-icon class="action-icon">delete</mat-icon></button>
+                                </li>
+                                  </ul>
+                                </td>
+                                
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                <div class="right" style="text-align: right;">
+                    <ul class="pagination">
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">«</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">1</a></li>
+                      <li><a class="active" href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">2</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">3</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">4</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">5</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">6</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">7</a></li>
+                      <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">»</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+          <div class="row">
+            <!-- <h2>Modal Example</h2> -->
+            <!-- Button to Open the Modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              Open modal
+            </button> -->
+          
+            <!-- The Modal -->
+            <div class="modal" id="myModall" >
+              <div class="modal-dialog" id="update" >
+                <div class="modal-content"style="width: 200% !important;left: 0;margin-bottom:90px">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Update Food Details</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                  
+                      
+                 
+                    <form [formGroup]="FoodForm">
+                      <div class="form-row">
+                          <label for="inputEmail4" class="form-lable">Food Name</label>
+                          <input type="text" formControlName="food_name" class="form-control" id="inputEmail4" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress" class="form-lable">Description</label>
+                        <textarea class="form-control" formControlName="desc" id="exampleFormControlTextarea1" rows="1"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress" class="form-lable">Category Type</label>
+                        <div class="select">
+                          <select  class="form-control"  name="slct" id="slct" formControlName="category_name" >
+                              <option *ngFor="let opt of this.slectList"  class="form-lable" value="{{opt.category_id}}">{{opt.category_name}}</option>
+                            
+                          </select>
+                      
+                      </div>
+                      </div>
+                      <br>
+                   
+                      <div  class="form-group" formArrayName="data" style="padding-top: 20px;">
+                        <div  *ngFor="let line of  getControls();let i=index" [formGroupName]="i">
+                          <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4" class="form-lable">Food Name</label>
+                            <input type="text" formControlName="food_name" class="form-control" id="inputEmail4" placeholder="">
+
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4" class="form-lable">Size Name</label>
+   
+                              <input type="text" formControlName="size_name" class="form-control" id="inputEmail4" placeholder="">
+                          </div>
+                        </div>
+                    
+
+
+                        
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4" class="form-lable">Price</label>
+                            <input type="text" formControlName="food_price" class="form-control" id="inputEmail4" placeholder="">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4" class="form-lable">Image</label>
+                            <input type="file" formControlName="image" class="form-control" id="inputEmail4" placeholder="">
+                          </div>
+                    
+
+
+                        </div>
+                        <!-- <button style="float: right;background-color: #ff4081;color:white"  (click)="Remove(i)"  mat-button color="white">
+                          Delete</button>
+                         -->
+
+                    
+                     </div>
+                     <button   (click)="ADD()" style="float: right;margin-right: 10px;background-color: #ff4081;color:white"mat-button color="white">Add</button>
+                        
+                           </div>
+                 
+                    </form>
+                 
+                   
+    
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" style="background-color: #f5365c;"
+                    
+                      >Update</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <!-- <h2>Modal Example</h2> -->
+              <!-- Button to Open the Modal -->
+              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Open modal
+              </button> -->
+            
+              <!-- The Modal -->
+              <div class="modal" id="myModal" >
+                <div class="modal-dialog" id="add" >
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Add Food Details</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                    
+                      <form [formGroup]="FoodForm">
+                        <div class="form-row">
+                            <label for="inputEmail4" class="form-lable">Food Name</label>
+                            <input type="text" formControlName="food_name" class="form-control" id="inputEmail4" placeholder="">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress" class="form-lable">Description</label>
+                          <textarea class="form-control" formControlName="desc" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress" class="form-lable">Category Type</label>
+                          <div class="select">
+                            <select  class="form-control"  name="slct" id="slct" formControlName="category_name" >
+                                <option *ngFor="let opt of this.slectList"  class="form-lable" value="{{opt.category_id}}">{{opt.category_name}}</option>
+                              
+                            </select>
+                        
+                        </div>
+                        </div>
+                        <br>
+                     
+                        <div  class="form-group" formArrayName="data" style="padding-top: 20px;">
+                          <div  *ngFor="let line of  getControls();let i=index" [formGroupName]="i">
+                            <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4" class="form-lable">Food Name</label>
+                              <input type="text" formControlName="food_name" class="form-control" id="inputEmail4" placeholder="">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4" class="form-lable">Size Name</label>
+     
+                                <input type="text" formControlName="size_name" class="form-control" id="inputEmail4" placeholder="">
+                            </div>
+                          </div>
+                      
+
+
+                          
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4" class="form-lable">Price</label>
+                              <input type="text" formControlName="food_price" class="form-control" id="inputEmail4" placeholder="">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4" class="form-lable">Image</label>
+                              <input type="file" formControlName="image" class="form-control" id="inputEmail4" placeholder="">
+                            </div>
+                      
+
+
+                          </div>
+                          <!-- <button style="float: right;background-color: #ff4081;color:white"  (click)="Remove(i)"  mat-button color="white">
+                            Delete</button>
+                           -->
+  
+                      
+                       </div>
+                       <button   (click)="ADD()" style="float: right;margin-right: 10px;background-color: #ff4081;color:white"mat-button color="white">Add</button>
+                          
+                             </div>
+                   
+                        <!-- <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4" class="form-lable">Price</label>
+                            <input type="email" formControlName="price" class="form-control" id="inputEmail4" placeholder="">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputZip" class="form-lable">Quantity</label>
+                            <select id="inputState" class="form-control" formControlName="qty">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Count(How Many Person's or Number's)</label>
+                            <input type="number" formControlName="count" class="form-control" id="inputEmail4" placeholder="">
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputZip">Number's</label>
+                            <select id="inputState" class="form-control" formControlName="numbers">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputZip">How Many Person's</label>
+                            <select id="inputState" class="form-control" formControlName="persons">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-4">
+                            <label for="inputEmail4">Type</label>
+                            <select id="inputState" class="form-control" formControlName="foodtype">
+                              <option selected>Choose...</option>
+                              <option>Veg</option>
+                              <option>Non Veg</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputZip">Category</label>
+                            <select id="inputState" class="form-control" formControlName="foodcategory">
+                              <option selected>Choose...</option>
+                              <option>Snacks</option>
+                              <option>Breakfast</option>
+                              <option>Meals</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="img">Food Image</label>
+                            <br>
+                            <input type="file" formControlName="foodimg" class="uploadFile img" value="Upload Photo" style="overflow: hidden;">
+                              
+                          </div>
+                        </div> -->
+                      </form>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                  <div class="modal-footer">
+                    
+                    <button type="button"  mat-button color="primary"  >Cancel</button>
+                    <button type="button"  mat-button color="primary" (click)="onSubmit()" >Add</button>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+       
+          <div class="row">
+            <!-- <h2>Modal Example</h2> -->
+            <!-- Button to Open the Modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              Open modal
+            </button> -->
+          
+            <!-- The Modal -->
+            <div class="modal" id="myMod" >
+              <div class="modal-dialog" id="del" >
+                <div class="modal-content"style="width: 100% !important;left: 0;">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="card" style="width: 96%;margin-left: 15px;">
+                      <form>
+                       <br>
+                            <h5>Are you sure you want to delete ?</h5>
+                        
+                      </form>
+                   
+                      <br>
+                      <div class="row">
+                          <div class="col-md-6" style="padding-bottom: 10px;">
+                      <button type="submit" class="btn btn-success" style="width: 40%;border-radius: 12px;background-color: #f5365c;">Yes</button>
+                    </div>
+                    <div class="col-md-6" style="padding-bottom: 10px;">
+                      <button type="submit" class="btn btn-success" style="width: 40%;border-radius: 12px;background-color: #f5365c;" data-dismiss="modal">Cancel</button>
+                    </div>
+                    </div>
+                      <br>
+                      <br>
+                  </div>
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                   -->
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </body>

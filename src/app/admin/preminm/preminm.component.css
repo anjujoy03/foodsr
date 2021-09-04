@@ -1,0 +1,55 @@
+
+  .card i
+{
+   color: #f5365c;
+
+}
+ 
+  #add {
+    position: absolute;
+    top: 10px;
+    bottom: 0px !important;
+    left: 400px;
+}
+#view {
+    position: absolute;
+    top: 10px;
+    bottom: 0px !important;
+    left: 299px;
+}
+#bread{
+ padding-left: 25px;width: 39%;
+}
+@media screen and (max-width: 768px)  {
+    #bread{
+        
+        width: 101%;
+    }
+    #myModall
+    {
+        left: 0px !important;
+        top: 10px;
+        bottom: 0;
+        overflow-x: auto;
+        }
+        #myModal
+        {
+            left: 0px !important;
+            top: 10px;
+            bottom: 0;
+            overflow-x: auto;
+        }
+       
+        #add {
+            position: absolute;
+            top: 10px;
+            bottom: 0px !important;
+            right: 0px;
+        }
+        #view {
+            position: absolute;
+            top: 10px;
+            bottom: 0px !important;
+            right: 0px;
+        }
+}

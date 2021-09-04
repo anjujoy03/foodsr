@@ -1,0 +1,141 @@
+
+.main_container .bigcontainer{
+  width: calc(100% - 80px);
+  margin-left: 64px;
+  }
+  .wrapper.active .container .column #caard{
+  padding-right: 50px;
+  }
+.wrapper{
+  width: 100%;
+  height: 100%;
+  }
+  
+  /* after adding active class */
+   .sidebarsmall{
+  width: 80px;
+  }
+  .app-accordian{
+    display: none;
+  }
+  .accordion {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    background: #fff;
+    border-radius: 4px;
+  }
+  .activepage a{
+    background: #3f51b5 !important;
+    color: white !important;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
+  }
+  
+  .accordion .menu {
+    position: relative;
+    padding: 17px 15px 25px 45px;
+    color: #4d4d4d;
+    font-weight: bold;
+    /* border-bottom: 1px solid #ccc; */
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .accordion li:last-child .menu {
+    border-bottom: 0;
+  }
+  
+  .accordion li i {
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    color: #595959;
+    transition: all 0.4s ease;
+  }
+      #bread{
+        padding-left: 25px;
+        width: 39%;
+       }
+       #add {
+        position: absolute;
+        top: 0px;
+        bottom: 0px !important;
+        left: 175px;
+    }
+    .card i
+{
+   color: #f5365c;
+
+}
+       @media screen and (max-width: 768px)  {
+         #bread{
+             
+             width: 101%;
+         }
+         #add {
+          position: absolute;
+          top: 0px;
+          bottom: 0px !important;
+          left: 0px;
+      }
+      #myModal
+      {
+          left: 0px !important;
+          top: 10px;
+          bottom: 0;
+          overflow-x: auto;
+      }
+        }
+
+  .imagePreview {
+    /* width: 100%;
+    height: 180px; */
+    background-position: center center;
+  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+  background-color:#fff;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+.btn-primary
+{
+  display:block;
+  border-radius:0px;
+  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+  margin-top:-5px;
+}
+.imgUp
+{
+  margin-bottom:15px;
+}
+.del
+{
+  position:absolute;
+  top:0px;
+  right:15px;
+  width:30px;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  background-color:rgba(255,255,255,0.6);
+  cursor:pointer;
+}
+.imgAdd
+{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:#4bd7ef;
+  color:#fff;
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+  text-align:center;
+  line-height:30px;
+  margin-top:0px;
+  cursor:pointer;
+  font-size:15px;
+}
+  
+  
+  
+  

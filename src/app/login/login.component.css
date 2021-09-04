@@ -1,0 +1,249 @@
+#modal-content-wrapper1 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(1fr, 3);
+    
+}
+
+
+#modal-title {
+    font-size: 22px;
+}
+.box-on-left{
+    background-color: black;
+    justify-items: center;
+    height: 15rem;
+    width: 19rem;
+    align-items: center;
+    position:absolute;
+    right:0;
+}
+
+.squre-ribbon{
+    background-color: yellow;
+    align-items: center;
+    height: 1rem;
+    width: 1rem;
+    align-items: center;
+    margin: -5px;
+
+   }
+#modal-footer {
+    justify-self: right;
+    align-self: center;
+}
+
+#modal-action-button {
+    margin-right: 30px;
+    background-color:#3b3b3b;
+}
+
+#modal-cancel-button {
+    background-color: #4e4e4e;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  .form-body{
+    margin: 28px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .limitTextHeight {
+    height: 20px;
+    overflow: hidden;
+}
+  @media screen and (max-width: 700px) {
+
+    }
+
+
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+    /* mat-dialog-container#modal-component {
+      border-radius: 2px !important;
+      background-image: url('../../assets/img/login.jpg') !important;
+      background: round !important;
+  } */
+}
+  img{
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+  }
+  .desc{
+    line-height: 30px;
+    font-size: 15px;
+    margin-left: 30px;
+    color: black;
+    font-family: Titillium Web;
+    margin-left: 20px;
+  
+    height: 200px;
+  }
+
+    button:focus{
+      border: none;
+      border-color: transparent;
+    }
+  
+  .rounbuton{
+    /* background-color: #f10606;
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 19px;
+    width: 26px;
+    
+    border-radius: 50%; */
+  }
+  .backgroundwhite{
+    height: 206px;
+    background-color: white;
+    width: 155px;
+ 
+  }
+.prodimage{
+  margin-left: 5px;
+  width: 209px;height: 100%;
+  background-size: 100%;
+  padding: 13px;
+
+}
+
+input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: black;
+    border-bottom: 1px solid grey;
+    color: darkgray;
+    font-size: 9px;
+}
+.btn{
+    width: 144px;
+    height: 32px;
+    border-radius: 1px;
+    background-color: #FFC501;
+    color: white;
+    border: none;
+    font-size: 10px;
+}
+body {
+  background: url('http://i.imgur.com/Eor57Ae.jpg') no-repeat fixed center center;
+  background-size: cover;
+  font-family: Montserrat;
+}
+
+.logo {
+  width: 213px;
+  height: 36px;
+  background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;
+  margin: 30px auto;
+}
+
+.tooltip.has-error .tooltip-arrow {
+  left: 10px !important;
+  border-bottom-color: #a94442;
+}
+
+.tooltip.has-error .tooltip-inner {
+  background: #a94442;
+  max-width: 100%;
+}
+
+.login-block {
+  width: 423px;
+  height: 400px;
+  padding: 20px;
+
+  background: #fff;
+  border-radius: 5px;
+  /* border-top: 5px solid #ff656c; */
+  margin: 0 auto;
+  margin-top: 108px;
+}
+
+.login-block h1 {
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.login-block input {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: Montserrat;
+  padding: 0 20px 0 50px;
+  outline: none;
+}
+
+.login-block input#username {
+  background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input#username:focus {
+  background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input#password {
+  background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input#password:focus {
+  background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+  border: 1px solid #FFC501;
+}
+
+.login-block button {
+  width: 100%;
+  height: 40px;
+  background: #FFC501;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #FFC501;;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: Montserrat;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-block button:hover {
+  background: #FFC501;
+}
+.invalid-feedback{
+  margin-top: -11px;
+}

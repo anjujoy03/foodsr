@@ -1,0 +1,18 @@
+
+  .card i
+{
+   color: #f5365c;
+
+}
+
+      #bread{
+        padding-left: 25px;
+        width: 39%;
+       }
+       @media screen and (max-width: 768px)  {
+         #bread{
+             
+             width: 101%;
+         }
+        }
+  

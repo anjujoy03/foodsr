@@ -1,0 +1,129 @@
+
+<h6 mat-dialog-title style="text-align: end;"><button (click)="closeModal()" mat-button mat-dialog-close>X</button> </h6>
+
+
+   
+    <!-- <h1 id="modal-title">Are you sure you want to logout?</h1> -->
+
+<div mat-dialog-content>
+    <section id="modal-body">
+        <div class="row col-12" >
+            <div class="row" >
+                <div class="column">
+                    <div class="content" *ngIf="!this.login">
+                        <h3 style="color: black;font-weight: 800rem; font-size: 32px;
+                        font-weight: bolder;">Welcome Back!</h3>
+                        <p style="color: black;">To keep connected with us please login with your personal info</p>
+                        <div class="sign-up">
+                            <button  type="button"   (click)="gotoLogin()"  style="background-color: black" class="btn btn-primary">SIGN IN</button>
+                        </div>
+                 
+                    </div>
+                    <div class="content" *ngIf="this.login">
+                        <h3 style="color: black;font-weight: 800rem; font-size: 32px;
+                        font-weight: bolder;">Hello Friend!</h3>
+                        <p style="color: black;">Enter your personal details and start journey with us</p>
+                        <div class="sign-up">
+                            <button  type="button"  (click)="gotoLogin()" style="background-color: black" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                 
+                    </div>
+                  
+                </div>
+                <div class="column" style="justify-content: center;">
+                    <div class="box-on-left">
+                        <div class="squre-ribbon">
+                        </div>
+                    <div class="form-body">
+
+                        <form class="form-grid" *ngIf="!this.login">
+                            <div class="row" >
+                                <div  class="col">
+                                    <input type="text" class="form-control" placeholder="FIRST NAME">
+                                </div>
+                                <div  class="col">
+                                    <input type="text" class="form-control" placeholder="LAST NAME">
+                                </div>
+            
+                            </div>
+                            <div class="row" >
+                                <div  class="col">
+                                    <input type="text" class="form-control" placeholder="PHONE NUMBER">
+                                </div>
+                                <div  class="col">
+                                    <input type="text" class="form-control" placeholder="EMAIL">
+                                </div>
+            
+                            </div>
+                            <div class="row" >
+                                <div  class="col">
+                                    <input type="password" class="form-control" placeholder="PASSWORD">
+                                </div>
+                                <div  class="col">
+                                    <input type="password" class="form-control" placeholder="CONFORM PASSWORD">
+                                </div>
+            
+                            </div>
+                           
+                            <div class="sign-up" style="text-align: center;">
+                                <button  type="button" class="btn btn-primary">SIGN UP</button>
+                            </div>
+                            <div class="login-notice">
+                               <!-- <p>Alredy logged in?    <a (click)="gotoLogin()">Sign in </a> here</p> -->
+                            </div>
+                        </form>
+
+                        <form class="form-grid" *ngIf="this.login" >
+                            <div class="form" class="login-form-body">
+                                <div class="login-block">
+                                    <br>
+                                    
+                                    <h1>Login</h1>
+                                    <br>
+                                    <br>
+                                    <form [formGroup]="loginForm" class="box" (ngSubmit)="onSubmit()">
+                                    <input type="text" value="" placeholder="Username"  formControlName="user_id" id="username" [ngClass]="{ 'is-invalid': submitted && f.user_id.errors }" />
+                                    <div *ngIf="submitted && f.user_id.errors" class="invalid-feedback">
+                                        <div *ngIf="f.user_id.errors.required">Field  required</div>
+                                    </div>
+                                <br>
+                                    <input type="password" value="" placeholder="Password"  formControlName="password" id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Field  required</div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <button>Submit</button>
+                                    </form>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                      
+                           
+                            <div class="sign-up" style="text-align: center;">
+                                <button  type="button"  class="btn btn-primary">SIGN IN</button>
+                            </div>
+                            <div class="login-notice">
+                              
+                            </div>
+                        </form>
+                 
+                    </div>
+                    </div>
+                
+                </div>
+               
+              </div>
+              </div>
+      
+    </section>
+
+
+</div>
+
+<div mat-dialog-actions>
+    <!-- <button mat-button (click)="onNoClick()">Get Food</button>
+    <button mat-button [mat-dialog-close]="data.city" cdkFocusInitial>Get City</button> -->
+</div>
+

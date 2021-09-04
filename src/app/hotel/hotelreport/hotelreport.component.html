@@ -1,0 +1,300 @@
+<div  [ngClass]="{'wrapper': show}">
+      
+    <div class="main_container">
+        <div class="sidebar" [ngClass]="{'sidebarsmall': show}" >
+            <div class="sidebar__inner">
+              <div class="profile">
+                <!-- <div class="img">
+                  <img src="../../assets/IMG/exeq engineers.png" alt="profile_pic" style="width: 180px;height: 170px;"> 
+                </div> -->
+                <!-- <div class="profile_info">
+                   <p></p>
+                   <p class="profile_name">Alex John</p>
+                </div> -->
+              </div>
+              <ul>
+                
+                <!-- <li>
+                  <a href="home" class="active">
+                    <span class="icon">
+                      <i class="fas fa-home"  style="color: plum;" ></i>
+                    </span>
+                    <span class="title">Dashboard</span>
+                  </a>
+                </li> -->
+                <div class="top_navbarr" id="fixed-nav-bar"  >
+                <div class="hamburger" >
+                  <div class="hamburger__inner" (click)="toggle()">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                  </div>
+               </div>
+               <div class="foods" style="padding: 18px;">
+                 <span style="color: #f5365c;
+                 font-size: 20px;
+                 font-weight: bold;
+                 font-family: fangsong;">Foodsair</span>
+               </div>
+               </div>
+  
+  
+               <app-accordian style="margin-top: 21px;" [ngClass]="{'app-accordian': show}"
+               [options]="options" 
+               [menus]="menus">
+              
+             </app-accordian>
+                  
+  
+            <ul style="margin-top: 27px;" class="accordion" *ngIf="show">
+              <li *ngFor="let menu of menus; let i = index" 
+                [class.active]="menu.active">
+                <div class="menu">
+                 
+                <img [src]="menu.iconClass" style="width: 16px;margin-right: 10px">
+                </div>
+              </li>
+           
+              
+        </ul>
+        </ul>
+              </div>
+          </div>
+    <body style="background-color:#F7F9F6;">
+      
+        
+       
+      <div class="container" style=" margin-top: 0px;max-width: 100% !important;" [ngClass]="{'bigcontainer': show}">
+       
+        <div class="top_navbar" id="fixed-nav-bar" style="padding-top: 30px;display: inline-block;display: flex;">
+         
+         
+            <div style="width: 70%;">
+            <span id="title" ></span>
+            </div>
+              <div class="profile px-8"  >
+                <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
+                      <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;margin-left: 15px;font-size: 25px;" (click)="accountdropdown()">account_circle 
+                        <div></div></mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;"></span>
+                        <mat-list role="list" *ngIf="logactive">
+                        <div _ngcontent-aps-c3="" class=" dropdown-header noti-title">
+                          <h6 _ngcontent-aps-c3="" class="text-overflow m-0" id="wel">Welcome!</h6>
+                        </div>
+                        <hr> 
+                     
+                          <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:black;font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                        </mat-list>
+              </div>
+  
+          </div>
+
+  
+    <div class="row" style="padding-bottom: 10px; background-color: #f5365c;padding-top: 80px;">
+      <div class="col-md-9">
+        <nav aria-label="breadcrumb" id="bread" >
+          <ol class="breadcrumb"  >
+            <li class="breadcrumb-item" >
+              <a href="home" style="color: black !important;">Home &nbsp; <i class="fas fa-home"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Report Details &nbsp;<i class="fas fa-info-circle"></i></li>
+          </ol>
+        </nav>
+      </div>
+      
+      <div class="col-md-3" >
+        <button type="button" class="btn btn-success" (click)="toggleShow()" style="  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-color:white;background-color:white !important;color:#f5365c; float: right;margin-right: 10px !important;width: 40% " >Filter</button> 
+        <!-- <button type="button" class="btn btn-success"style="  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-color:white;background-color:white !important;color:#f5365c; float: right;margin-right: 10px !important; " >Filter</button> -->
+        <!-- <button type="button" class="btn btn-success"style=" box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-color:white;background-color:white !important;color:#f5365c; float: right;margin-right: 30px !important; " data-toggle="modal" data-target="#myModal">Add</button>
+       -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+    </div>
+    
+    <div class="row" style="margin-top: -70px !important;" >
+      <div class="col-lg-12" style="padding-left: 23px;">
+        <div class="card" id="carddd" *ngIf="isShown" style="width: 98%;border-radius: 8px;margin-left: 12px;">
+            <div  class="cardfil" id="caardfil" style="border-radius: 8px;">
+              <br>
+              <h4 style="text-align: left;padding-left: 30px;font-size: 20px;padding-top: 10px;color: gray;"><b>Filter</b></h4>
+              <br>
+          <div class="row">
+              
+                <div class="col-md-7">
+                
+                  <div class="row" style="padding-left: 81px;">
+                    <label for="exampleFormControlInput1" style="color: gray;">From Date</label>
+                    <label for="exampleFormControlInput1" style="color: gray;padding-left: 116px;"> To Date</label>
+                  </div>
+                  <div style="display: flex;margin-top: -26px;">
+                    <input type="date"    id="filtersort" class="form-control"  style="margin-left: 66px;width: 25.5%;margin-right: 3px;"/>
+                    <input type="date"   id="filtersort" class="form-control" style="width: 25%;" />
+                    <button class="fltbtn" type="submit"style="height:39px;" >Submit</button>
+                  </div>
+                </div>
+                <div class="col-md-3"  >
+                
+                </div>
+                <div class="col-md-2">
+                  
+                  
+                </div>
+            </div>
+            <div class="row"style="padding-left: 36px;">
+              
+                  
+                <div class="col-md-7" >
+                  <div class="row" style="padding-left: 46px;">
+                    <label for="exampleFormControlInput1" style="color: gray;"> Sort</label>
+
+                  </div>
+                  <div style="display: flex;margin-top: -26px;">
+                    <select name="cars" id="filtersort"style="color: gray;width:57.5%;height:37px;" >
+                      <option value="no">By Date</option>
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                    </select>
+                    <button class="fltbtn" type="submit" style="height:37px;margin-top: 31px;width: 20.5%;">Filter</button>
+                  </div>
+                 
+                </div>
+                <div class="col-md-3" >
+                   
+                </div>
+                <div class="col-md-2" >
+                
+              </div>
+              </div>
+           
+              </div>
+              </div>
+            <br>
+          <div class="car" style="width: 98%;margin-left: 13px;border-radius: 8px;" id="cardd">
+        <br>
+        <br>
+                <div class="row">
+                    <div class="col-sm-8">
+                      <br>
+                      <h5 style="float: left;margin-left: 25px;font-size: 25px;">Payment Details</h5>
+                    </div>
+                    <div class="col-sm-4">
+                        <br>
+                        <button class="btn btn-danger btn-sm rounded-0" id="infoicon"  type="button" data-toggle="tooltip" data-placement="top" title="Payment Details">
+                          <mat-icon data-toggle="modal" data-target="#station">table_chart</mat-icon>
+                        </button>&nbsp;&nbsp;
+                      <button class="btn btn-danger btn-sm rounded-0" id="infoicon" (click)="incomeShow()"  type="button" data-toggle="tooltip" data-placement="top" title="Income Summary">
+                          <mat-icon data-toggle="modal" data-target="#station">bar_chart</mat-icon>
+                        </button>&nbsp;&nbsp;
+                        <button class="btn btn-danger btn-sm rounded-0" id="infoicon" (click)="businessShow()"  type="button" data-toggle="tooltip" data-placement="top" title="Business Summary">
+                          <mat-icon data-toggle="modal" data-target="#station">donut_large</mat-icon>
+                        </button>&nbsp;&nbsp;
+                    </div>
+                </div>
+           
+             
+              <br>
+                    <table class="table" style="border-collapse:collapse;padding-top: 20px !important;width: 94%;margin-left: 25px;">
+                      <thead style="background: #f5365c;font-family: serif;color:white">
+                        <tr>
+                          <th scope="col" style="color: black;">SLNO</th>
+                          <th scope="col" style="color: black;">DATE</th>
+                          <th scope="col" style="color: black;">FOOD NAME</th>
+                          <th scope="col" style="color: black;">PRICE</th>
+                        
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>23/09/2021</td>
+                          <td>BIRIYANI</td>
+                          <td>160</td>
+                          
+                       <td>
+                        <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModall"style="background-color:white !important;border-color:white; color:#f5365c; float: right;margin-right: 45px !important;height: 30px; " >View Details</button> -->
+                          </td>
+                          
+                        </tr>
+                       
+                      </tbody>
+                    </table>
+          <div class="right" style="text-align: right;">
+              <ul class="pagination">
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">«</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">1</a></li>
+                <li><a class="active" href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">2</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">3</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">4</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">5</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">6</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">7</a></li>
+                <li><a href="tryit.asp-filename=trycss_ex_pagination_active_round.html#">»</a></li>
+              </ul>
+          </div>
+          </div>
+          <div class="row" id="chart1">
+          
+            <div class="col-lg-12" style="padding-left: 3px;">
+            <div class="card"  *ngIf="isincome"   style="padding-left: 50px;margin-left: 24px;padding: 15px;width:94.5% ;">
+              <br>
+              <br>
+              <h2 style="font-size: 20px;">INCOME SUMMARY</h2>
+              <br>
+              <br>
+              <div class="chart-wrapper" >
+                <canvas baseChart 
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType" >
+              </canvas>
+            </div>
+
+            
+          </div>
+          </div>
+          </div>
+          <div class="row" >
+          
+            <div class="col-lg-12" style="padding-left: 3px;">
+              <div class="card" *ngIf="isbusiness"   style="padding-left: 50px;margin-left: 24px;padding: 15px;width:94.5% ;">
+            
+           
+              <br>
+             
+              <h2 style="font-size: 20px;">BUSINESS SUMMARY</h2>
+              <br>
+              <br>
+              <br>
+              <div class="chart-wrapper">
+                <canvas baseChart 
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType">
+              </canvas>
+            </div>
+    
+          </div>
+            
+          </div>
+            </div>
+      </div>
+    
+    </div>
+          
+        
+         
+         
+        
+      </div>
+      </body>
