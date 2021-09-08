@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1630667412886,
+  "timestamp": 1631091110753,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.298f10aa32ba75aefdff.js",
+        "/main.js",
         "/manifest.webmanifest",
-        "/polyfills.3b012c41178bdca9fafc.js",
-        "/runtime.d297b994b4dac65110d0.js",
-        "/scripts.d904c4cf6f0a71a79f12.js",
-        "/styles.70bb8796add0b257c23d.css"
+        "/polyfills.js",
+        "/runtime.js",
+        "/scripts.js",
+        "/styles.css"
       ],
       "patterns": []
     },
@@ -77,9 +77,9 @@
         "/assets/img/under cooking.jpg",
         "/assets/js/custom.js",
         "/assets/js/main.js",
-        "/back_2.472cfea1d965d1608462.png",
-        "/login.7e19f6e9f86a7a9d90cf.jpg",
-        "/menu.8f881f64cf47443db474.jpg"
+        "/back_2.png",
+        "/login.jpg",
+        "/menu.jpg"
       ],
       "patterns": []
     }
@@ -133,17 +133,17 @@
     "/assets/img/under cooking.jpg": "1e4c35d0542fb9ce462c62fbe28767e992099cd5",
     "/assets/js/custom.js": "a5f94e42e3f9f70770927f793e90b1c32e2324ce",
     "/assets/js/main.js": "df6863ff69c0094e058395240f29f4392032435f",
-    "/back_2.472cfea1d965d1608462.png": "f49a6b6562f1abdea8dee31f2d2e2e4f60ddcb5e",
+    "/back_2.png": "f49a6b6562f1abdea8dee31f2d2e2e4f60ddcb5e",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "725a90fa27e63b3d27de235e3e850f49c3337ae8",
-    "/login.7e19f6e9f86a7a9d90cf.jpg": "743bbdbf81fdfba95c8b55cabe33b57f500d58ae",
-    "/main.298f10aa32ba75aefdff.js": "a3761ba6aedd1fe3ce3c390b6a56d18275a5b3ae",
+    "/index.html": "ec8ffdae8c9b1e138b6fa61668817637dae1b9f3",
+    "/login.jpg": "743bbdbf81fdfba95c8b55cabe33b57f500d58ae",
+    "/main.js": "7a5fee2fc0ccc21030138a828cdb82edb4d245f0",
     "/manifest.webmanifest": "26b2416ed397bf53842adb8e23c3d43d82617ab1",
-    "/menu.8f881f64cf47443db474.jpg": "1475a0f9b7bc983b7f0fdc7c982a44cf6b9136b5",
-    "/polyfills.3b012c41178bdca9fafc.js": "276cec3f1acadf79ec95d1a044ba5e903044e13c",
-    "/runtime.d297b994b4dac65110d0.js": "cd7bceb9577264fd679918e699c2c0e083574168",
-    "/scripts.d904c4cf6f0a71a79f12.js": "357a5140c199f97d1deb0db6d68ea7ca4294c06d",
-    "/styles.70bb8796add0b257c23d.css": "edb338736149b2c56f247ad7b0099f6578a091ea"
+    "/menu.jpg": "1475a0f9b7bc983b7f0fdc7c982a44cf6b9136b5",
+    "/polyfills.js": "276cec3f1acadf79ec95d1a044ba5e903044e13c",
+    "/runtime.js": "cd7bceb9577264fd679918e699c2c0e083574168",
+    "/scripts.js": "357a5140c199f97d1deb0db6d68ea7ca4294c06d",
+    "/styles.css": "e68f61952f88d635cfc44d47e8a751434294f549"
   },
   "navigationUrls": [
     {
